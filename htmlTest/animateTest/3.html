@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>格子测试</title>
+</head>
+<style type="text/css">
+.cube-container {
+    width: 800px;
+    height: 400px;
+    margin: 40px auto;
+    position: relative;
+}
+
+.cube {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    transform-style: preserve-3d;
+    /*animation: rotate 15s infinite;*/
+    float: left;
+}
+
+.cube div {
+    width: 40px;
+    height: 40px;
+    background-color: grey;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cube .top {
+    transform: translate3d(0, -20px, 0) rotateX(90deg);
+    background-color: grey;
+}
+
+.cube .bottom {
+    transform: translate3d(0, 20px, 0) rotateX(90deg);
+    background-color: grey;
+}
+
+.cube .front {
+    transform: translate3d(0, 0, 20px);
+    background-color: grey;
+}
+
+.cube .back {
+    transform: translate3d(0, 0, -20px);
+    background-color: grey;
+}
+
+.cube .left {
+    transform: translate3d(-20px, 0, 0) rotateY(90deg);
+    background-color: grey;
+}
+
+.cube .right {
+    transform: translate3d(20px, 0, 0) rotateY(90deg);
+    background-color: grey;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+</style>
+
+<body>
+    <div id="cube-container" class="cube-container">
+        <div class="cube">
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+var w = window
+var d = document
+var cube = {
+    init: function() {
+    	cube.render()
+    },
+    render: function() {
+    	for (var i = 40; i >= 0; i--) {
+    		var cubeElement = cube.createCube()
+    		d.getElementById('cube-container').appendChild(cubeElement)
+    	}
+    },
+    createCube: function() {
+        var div = d.createElement('div')
+        div.className = 'cube'
+        div.innerHTML = `<div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>`
+        return div
+    }
+}
+w.onload = cube.init
+</script>
+
+</html>

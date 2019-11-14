@@ -1,0 +1,310 @@
+@charset="utf-8";
+a {
+	color: #333333;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #6495ED;
+	text-decoration: none;
+}
+
+html,
+body {
+	background: white;
+	-webkit-font-smoothing: antialiased;
+	font-size: 13px
+}
+
+* {
+	box-sizing: border-box;
+	font-family: "Open Sans", Arial, "Microsoft YaHei", "微软雅黑";
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+}
+
+a img {
+	border: 0;
+}
+
+:focus {
+	outline: 0;
+}
+
+
+/*页面背景*/
+[class^="me-bg"],
+[class*=" me-bg-"]{
+	position: absolute;
+	left: 0;
+	width: 100%;
+}
+
+[class^="me-dbg"],
+[class*=" me-dbg-"]{
+	width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+.me-bg1 {
+	top: 0;
+	background: url(../../img/dbg1.jpg) no-repeat 50% 0;
+	height: 386px;
+}
+.me-dbg1{    
+    height: 386px;
+    background: url(../../img/bg1.jpg) no-repeat 50% 0;
+}
+.me-bg2 {
+	top: 386px;
+	background: url(../../img/dbg2.jpg) no-repeat 50% 0;
+	height: 1000px;
+}
+.me-dbg2{    
+    background: url(../../img/bg2.jpg) no-repeat 50% 0;
+	height: 1000px;
+}
+.head-nav {
+	position: relative;
+}
+
+.me-nav {
+	position: relative;
+	margin-top: 100px;
+	width: 100%;
+	border-bottom: 2px solid #6495ED;
+}
+
+.me-nav .me-nav-con {
+	width: 1000px;
+	height: 30px;
+	margin: 0 auto;
+}
+
+.me-nav .me-nav-con .me-nav-ul li.me-nav-li {
+	/*background-color: #6495ED;*/
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 10px;
+	color: #A8ACAF;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.me-nav .me-nav-con .me-nav-ul li.active {
+	color: white;
+	background-color: #6495ED;
+}
+
+.head-img {
+	margin-top: 2px;
+	width: 1000px;
+	height: 1px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.img-fiter {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	right: 0;
+	top: -50px;
+	border-radius: 50px;
+	filter: alpha(opacity=60);
+	opacity: 0.5;
+	background-color: #a8acaf;
+	z-index: 10;
+	transition: opacity .8s;
+	cursor: pointer;
+}
+
+.img-fiter:hover {
+	opacity: 0;
+}
+
+.head-img a img {
+	display: block;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	right: -120px;
+	top: -50px;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all .8s ease-in-out;
+}
+
+.head-img a img:hover {
+	transform: scale(1.2);
+}
+
+
+/*主页内容区*/
+
+.me-content {
+	width: 1000px;
+	margin: 10px auto;
+	position: relative;
+}
+
+.me-content:after {
+	content: '';
+	display: block;
+	clear: both;
+	height: 0;
+}
+
+.boss-import {
+	width: 700px;
+	float: left;
+}
+
+.boss-import ul li {
+	width: 700px;
+	padding: 20px;
+	background-color: #F9F9F9;
+	transition: all 0.5s;
+	margin-top: 20px;
+	border-radius: 2px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.boss-import ul li:after {
+	content: '';
+	display: block;
+	clear: both;
+	height: 0;
+}
+
+.boss-import ul li:hover {
+	box-shadow: 0 0px 8px rgba(46, 143, 237, 0.3)
+}
+
+.boss-import ul li a.guild-icon {
+	float: left;
+	width: 160px;
+	height: 120px;
+	margin-right: 20px;
+	background: no-repeat center center;
+	background-size: cover;
+	position: relative;
+}
+
+[class^="mise-"],
+[class*=" mise-"] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 2px 10px;
+	font-size: 12px;
+	display: block;
+	background-color: #0bbc6b;
+	color: white;
+}
+
+.mise-cos {
+	background-color: #0bbc6b !important;
+}
+
+.mise-bns {
+	background-color: #FA8072 !important;
+}
+
+.mise-dnf {
+	background-color: #6495ED !important;
+}
+
+.boss-import ul li .guild-content {
+	box-sizing: border-box;
+	font-family: "微软雅黑", Arial;
+	overflow: hidden;
+}
+
+.boss-import ul li .guild-content .guild-title {
+	font-size: 18px;
+	font-weight: 600;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+.boss-import ul li .guild-content .guild-bq {
+	margin: 15px 0 8px;
+	color: #aaaaaa;
+}
+
+.boss-import ul li .guild-content .guild-bq:after {
+	content: '';
+	display: block;
+	clear: both;
+	height: 0;
+}
+
+.boss-import ul li .guild-content .guild-bq .guild-bq-l {
+	/*color: #B7B7B7;*/
+	font-size: 12px;
+	display: block;
+	padding: 0px 10px 0px 10px;
+	margin: 0 10px;
+	float: left;
+	height: 18px;
+	line-height: 18px;
+	border-radius: 9px;
+	background-color: salmon;
+	color: white;
+}
+
+.boss-import ul li .guild-content .guild-note {
+	color: #A8ACAF;
+	box-sizing: border-box;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+.boss-more {
+	width: 700px;
+	margin-top: 20px;
+}
+
+.boss-more a {
+	width: 700px;
+	background-color: #F9F9F9;
+	height: 30px;
+	display: block;
+	text-align: center;
+	line-height: 30px;
+}
+
+.other {
+	float: left;
+	width: 280px;
+	margin-left: 20px;
+}
+
+.other .erweima {
+	width: 280px;
+	margin-top: 10px;
+}
+
+.other .erweima a img {
+	width: 280px;
+	height: auto;
+}
+
+.other .erweima .erweima-note {
+	text-align: center;
+	font-size: 12px;
+}
+
+.me-bottom {
+	margin-top: 20px;
+	border-top: 1px solid #EEEEEE;
+	height: 300px;
+	position: relative;
+	width: 100%;
+}

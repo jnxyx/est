@@ -1,0 +1,285 @@
+/*** jquery.fileupload ***/
+
+.my-upload {
+    overflow: hidden;
+}
+
+.my-upload .btn-upload {
+    float: left;
+    position: relative;
+    cursor: pointer;
+    background-image: url(img/btn-pic.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+.my-upload .btn-upload:after {
+    clear: both;
+}
+
+.my-upload .btn-upload.upload-video {
+    background-image: url(img/btn-video.png);
+}
+
+.my-upload .file-list {
+    /*float: left;*/
+}
+
+.my-upload .file-item {
+    float: left;
+    width: 104px;
+    height: 104px;
+    margin-right: 15px;
+    margin-bottom: 24px;
+}
+
+.my-upload .file-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.my-upload .file-item a {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 20px;
+    color: #414B54;
+    text-align: center;
+    background-color: #EFEFEF;
+    line-height: 20px;
+    font-family: "微软雅黑";
+    padding: 0;
+}
+
+.my-upload .upload-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+}
+
+.my-upload .upload-loading img {
+    width: 100%;
+}
+
+
+/*** jquery.fileupload end ***/
+
+
+/*** jquery uploadify ***/
+
+.uploadify {
+    position: relative;
+    margin-bottom: 1em;
+}
+
+.uploadify-button {
+    width: 100%;
+    height: 100%;
+    color: #FFF;
+    font: bold 12px Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.uploadify-button.disabled {
+    background-color: #D0D0D0;
+    color: #808080;
+}
+
+.uploadify-queue {
+    margin-bottom: 1em;
+}
+
+.uploadify-queue-item {
+    border-radius: 3px;
+    font: 11px Verdana, Geneva, sans-serif;
+    width: 360px;
+}
+
+.uploadify-error {
+    background-color: #FDE5DD !important;
+}
+
+.uploadify-queue-item .cancel {
+    float: right;
+    margin-top: -2px;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.uploadify-queue-item .cancel a {
+    color: #ef4224;
+}
+
+.uploadify-queue-item.completed {
+    background-color: #E5E5E5;
+}
+
+.uploadify-progress {
+    width: 320px;
+    border-radius: 5px;
+    height: 10px;
+    background: #f1f1f1;
+    position: relative;
+    float: left;
+}
+
+.uploadify-progress-bar {
+    border-radius: 5px;
+    height: 10px;
+    background: #de5038;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.uploadify-queue-item .fileName,
+.uploadify-queue-item .data {
+    display: none;
+}
+
+.uploadControl {
+    overflow: hidden;
+}
+
+.uploadControl .btnAddArea {
+    float: left;
+    position: relative;
+}
+
+.uploadControl .btnAddArea:after {
+    clear: both;
+}
+
+.uploadControl .btnAddArea object {
+    left: 0;
+}
+
+.uploadControl .fileItem {
+    float: left;
+    width: 104px;
+    height: 104px;
+    margin-right: 15px;
+    margin-bottom: 24px;
+}
+
+.uploadControl .fileItem img {
+    width: 100%;
+    height: 100%;
+}
+
+.uploadControl .fileItem a {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 20px;
+    color: #414B54;
+    text-align: center;
+    background-color: #EFEFEF;
+    line-height: 20px;
+    font-family: "微软雅黑";
+    padding: 0;
+}
+
+.uploadControl .uploadify-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+}
+
+.uploadControl .uploadify-loading img {
+    width: 100%;
+}
+
+
+/*** jquery uploadify end ***/
+/*** upload file ***/
+
+.my-upload {
+    overflow: hidden;
+}
+
+.my-upload input[type="file"] {
+    display: none;
+}
+
+.my-upload .webuploader-pick {
+    width: 100%;
+    height: 100%;
+}
+
+.my-upload .btn-upload {
+    float: left;
+    position: relative;
+    cursor: pointer;
+    background-image: url(img/btn-pic.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+.my-upload .btn-upload:after {
+    clear: both;
+}
+
+.my-upload .btn-upload.upload-video {
+    background-image: url(img/btn-video.png);
+}
+
+.my-upload .file-list {
+    float: left;
+}
+
+.my-upload .file-item {
+    float: left;
+    width: 104px;
+    height: 104px;
+    margin-right: 15px;
+    margin-bottom: 24px;
+}
+
+.my-upload .file-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.my-upload .file-item a {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 20px;
+    padding: 0;
+    color: #414B54;
+    text-align: center;
+    line-height: 20px;
+    background-color: #EFEFEF;
+}
+
+.my-upload .upload-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/uploading.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    /*opacity: 0.5;*/
+}
+
+.btn-upload div{
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/*** upload file end ***/

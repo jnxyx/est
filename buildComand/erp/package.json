@@ -1,0 +1,10 @@
+{
+  "description": "静态页映射构建",
+  "author": "erp",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+
+  }
+}

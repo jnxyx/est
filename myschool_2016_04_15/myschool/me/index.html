@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div>
+			<input id='holder' placeholder="请输入空间家名进行查找" value="ascs" />
+			<p>热门空间：<span>北京</span><span>上海</span></p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var time;
+		window.onload = function() {
+			time = new Date();
+			console.log(time.toString());
+			console.log('嘎嘎');
+		}
+		var holder = document.getElementById('holder').value;
+		document.getElementById('holder').value = holder.toUpperCase();
+		holder = holder.toUpperCase();
+		console.log(document.getElementById('holder').value);
+		var a = {
+			b: 'yangguo'
+		}
+		var c = a.b; //c='yangguo',string
+		c = 'ijnan';
+		console.log(a);
+
+		function char_counts(strl) {
+			console.log(strl);
+			var uchars = {};
+			strl.replace(/\S/g, function(l) {
+				uchars[l] = (isNaN(uchars[l]) ? 1 : uchars[l] + 1);
+			});
+			console.log(strl);
+			return uchars;
+		}
+		console.log(char_counts('sfsvrwevr'));
+	</script>
+
+</html>

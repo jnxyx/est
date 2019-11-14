@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>作用域</title>
+</head>
+
+<body>
+    <p id="p1"></p>
+</body>
+<script type="text/javascript">
+function A() {
+    var a = {
+        x: 12,
+        y: 13,
+        sun: amont()
+    };
+
+    function amont() {
+        return a.x + a.y;
+    }
+
+    return a;
+}
+
+console.log(A().sun);
+</script>
+
+</html>

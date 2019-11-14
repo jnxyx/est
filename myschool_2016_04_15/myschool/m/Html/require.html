@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>require</title>
+	</head>
+
+	<body>
+		<div id="d1">xu yun xiang</div>
+		<div id="d2">xu yun xiang's test for require</div>
+		<div class="main">
+			<div id="myKo">
+				<h1 data-bind="text: title"></h1>
+				<div data-bind="visible: isDisplayHeader">
+					Name: <span data-bind="text: testData.name"></span> Count: <span data-bind="text: testData.count"></span> Description: <span data-bind="text: testData.description"></span>
+				</div>
+				<br>
+				<div>
+					<input type="text" data-bind="value: searchText">
+				</div>
+				<br>
+				<table border="1">
+					<tr>
+						<th>科目</th>
+						<th>分数</th>
+					</tr>
+					<!-- ko foreach: { data: testArray, afterRender: afterRenderListItem} -->
+					<tr>
+						<td data-bind="text: name"></td>
+						<td data-bind="text: score"></td>
+					</tr>
+					<!-- /ko -->
+				</table>
+				<br>
+				<div> ·
+					<a href="#" data-bind="click:testClick">点击我</a>
+				</div>
+				<!-- <div>
+                1. 2年以上前端经验，至少1年以上专门javascript经验
+                <br>2. 掌握JavaScript语言核心技术DOM、BOM、Ajax、JSON等
+                <br>3. 对Javascript面向对象编程具有深入的了解；
+                <br>4. 至少熟悉一种主流的Javascript框架，如：Jquery,knockoutjs,prototype等
+                <br>1、负责与后端配合进行数据交互。
+                <br>2、负责前端相关业务js代码的开发。
+            </div> -->
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="../js/lib/require.js" data-main="js/main.js"></script>
+
+</html>

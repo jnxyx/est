@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>apply</title>
+	</head>
+	<script type="text/javascript">
+		function array(a, b, c) {
+			console.log(this)
+			console.log(a);
+			console.log(b);
+			console.log(c);
+		}
+		array.apply(['a', 'b', 'c'], ['aa', 'bb']);
+		array.apply(['a', 'b', 'c'], ['aa', 'bb', 'ccb']);
+		array.apply({
+			a: 'a'
+		}, ['aa', 'bb', 'ccb']);
+		array.apply('a', ['aa', 'bb', 'ccb']);
+		array.apply('a', 'a');//出错
+	</script>
+
+	<body>
+	</body>
+
+</html>

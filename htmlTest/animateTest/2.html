@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>粒子测试</title>
+</head>
+<style type="text/css">
+.container {
+    border: 1px solid #d0d0d0;
+    margin: 100px auto;
+    width: 1000px;
+    height: 200px;
+    outline: none;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.dot {
+    position: absolute;
+}
+</style>
+
+<body>
+    <div id='con' class="container">
+    </div>
+</body>
+<script type="text/javascript">
+(function(win, doc) {
+    var random = Math.random
+    var sin = Math.sin
+    var cos = Math.cos
+    var PI = Math.PI
+
+    var con = doc.getElementById('con')
+    var conf = {
+        speed: 10,
+        dotMax: 50,
+        dotSize: 1,
+        width: con.clientWidth,
+        height: con.clientHeight
+    }
+
+    var dotArray = []
+
+    function init() {
+        for (var i = conf.dotMax; i >= 1; i--) {
+            dotArray.push(createDot())
+        }
+
+        setInterval(function() {
+            renderDots()
+        }, 1000 / 60)
+
+
+
+    }
+
+    function renderDots() {
+        // con.innerHtml = ''
+        for (var i = dotArray.length - 1; i >= 0; i--) {
+            var dot = dotArray[i]
+            dot.top = dot.top + dot.speed * sin(dot.dir * 2 * PI / 360)
+            dot.left = dot.left + dot.speed * cos(dot.dir * 2 * PI / 360)
+
+            if (dot.top < 0) {
+                dot.top = 0
+                dot.dir = dot.dir - 180
+                if (dot.dir > 90) {
+                    dot.dir += 2 * (90 - dot.dir)
+                } else {
+                    dot.dir -= 2 * (dot.dir - 90)
+                }
+            }
+            if (dot.top > (conf.height - conf.dotSize)) {
+                dot.top = conf.height - conf.dotSize
+                dot.dir = dot.dir + 180
+                if (dot.dir > 270) {
+                    dot.dir -= 2 * (dot.dir - 270)
+                } else {
+                    dot.dir += 2 * (270 - dot.dir)
+                }
+            }
+            if (dot.left < 0 || dot.left > (conf.width - conf.dotSize)) {
+                dot.left = dot.left < 0 ? 0 : (conf.width - conf.dotSize)
+                dot.dir = dot.dir - 180
+                if (dot.dir < 0) {
+                    dot.dir = -dot.dir
+                } else {
+                    dot.dir = 360 - dot.dir
+                }
+            }
+            dot.el.style.top = dot.top + 'px'
+            dot.el.style.left = dot.left + 'px'
+            var color = parseInt(((dot.top * dot.left) * 16 * 16 * 16 * 16 * 16 * 16 / (conf.width * conf.height))).toString(16)
+            color = '#' + color
+
+            if (dot.left == 0 || dot.left == conf.width || dot.top == 0 || dot.top == conf.height) {
+                var el = dot.el
+                // el.innerText = 'Boom!!!'
+                setTimeout(function() {
+                    el.innerText = ''
+                }, 500)
+            }
+
+            dot.el.style.backgroundColor = color
+            dot.el.style.boxShadow = '0px 0px ' + 3 * conf.dotSize + 'px ' + color
+            dot.el.style.width = conf.dotSize + 'px'
+            dot.el.style.height = conf.dotSize + 'px'
+            dot.el.style.borderRadius = conf.dotSize / 2 + 'px'
+            if (!dot.appended) {
+                con.appendChild(dot.el)
+                dot.appended = true
+            }
+        }
+    }
+
+    function createDot() {
+        var dot = doc.createElement('div')
+        dot.classList = 'dot'
+        var dir = parseInt((360 * random()))
+        var speed = 1 + parseInt((conf.speed * random()))
+        var top = parseInt((conf.height * random()))
+        var left = parseInt((conf.width * random()))
+        return {
+            dir: dir,
+            speed: speed,
+            top: top,
+            left: left,
+            el: dot
+        }
+    }
+    win.onload = init
+})(window, document)
+</script>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>快速排序</title>
+</head>
+<style type="text/css">
+.container {
+    width: 1000px;
+    margin: 100px auto;
+}
+
+.array-input {
+    outline: none;
+    width: 200px;
+    height: 30px;
+    border-radius: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.array-container,
+.sort-container {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #5d5d5d;
+    font-family: sans-serif;
+}
+
+.array-random,
+.sort-result {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.array-btn {
+    width: 100px;
+    height: 30px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+</style>
+
+<body>
+    <div class="container">
+        <input id='array-input' class="array-input" type="text" name="" placeholder="请输入数组长度，回车获取随机数组" value="" />
+        <div class="array-container">
+            <div class="array-title">随机数组</div>
+            <div class="array-random">
+                1,2,3,4,5,6,7,8,9,10,11,12
+            </div>
+        </div>
+        <input id='array-btn' class="array-btn" type="button" value="排序" />
+        <div class="sort-container">
+            <div class="sort-title">快速排序结果(耗时：<span id="quickSortTime">12</span>ms)</div>
+            <div id='quickSort' class="sort-result">
+                1,2,3,4,5,6,7,8,9,10,11,12
+            </div>
+        </div>
+        <div class="sort-container">
+            <div class="sort-title">数组排序结果(耗时：<span id="sortTime">12</span>ms)</div>
+            <div id="arraySort" class="sort-result">
+                1,2,3,4,5,6,7,8,9,10,11,12
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src='quickSort.js'></script>
+<script type="text/javascript">
+var array = []
+var arrayLength = 0
+var max = 100
+window.onload = function() {
+    // 数组长度输入框
+    let input = document.querySelector('#array-input')
+    // 排序按钮
+    let sort = document.querySelector('#array-btn')
+    // 随机数组容器
+    let randomContainer = document.querySelector('.array-random')
+    // 快排容器
+    let quickSort = document.querySelector('#quickSort')
+    // 快排计时
+    let quickSortTime = document.querySelector('#quickSortTime')
+    // 数组排序容器
+    let arraySort = document.querySelector('#arraySort')
+    // 数组排序计时
+    let sortTime = document.querySelector('#sortTime')
+    input.onkeyup = function(e) {
+        arrayLength = parseInt(input.value)
+        if (e.keyCode == 13) {
+            array = getRandomArray()
+            randomContainer.innerText = array.join(',')
+        }
+    }
+    sort.onclick = function() {
+        let copyArray = copy(array)
+        let timeStart = +new Date()
+        let sortArray = QuickSort(copyArray)
+        let timeEnd = +new Date()
+
+        quickSort.innerText = sortArray.join(',')
+        quickSortTime.innerText = timeEnd - timeStart
+
+
+        copyArray = copy(array)
+        timeStart = +new Date()
+        sortArray = copyArray.sort(function(a, b) {
+            return a - b
+        })
+        timeEnd = +new Date()
+
+        arraySort.innerText = sortArray.join(',')
+        sortTime.innerText = timeEnd - timeStart
+    }
+}
+
+function getRandomArray() {
+    let array = []
+    for (var i = arrayLength; i >= 1; i--) {
+        array.push(parseInt(max * Math.random()))
+    }
+    return array
+}
+
+function copy(array) {
+    return JSON.parse(JSON.stringify(array))
+}
+</script>
+
+</html>

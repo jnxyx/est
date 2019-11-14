@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>content_before</title>
+		<style type="text/css">
+			[id^="content-"] {
+				width: 1000px;
+				height: 40px;
+				margin: 10px auto;
+			}
+			
+			[id^="content-"]:before {
+				content: '\e030';
+				font-family: "dripicons";
+				font-style: normal;
+				font-weight: normal;
+				font-variant: normal;
+				text-transform: none !important;
+				speak: none;
+				display: inline-block;
+				text-decoration: none;
+				width: 1em;
+				line-height: 1em;
+				-webkit-font-smoothing: antialiased;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="content-a">a</div>
+		<div id="content-b">b</div>
+		<div id="content-c">c</div>
+		<div id="content-d">d</div>
+		<div id="content-e">e</div>
+	</body>
+
+</html>

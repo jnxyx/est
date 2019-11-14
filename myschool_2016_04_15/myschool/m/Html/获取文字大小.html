@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div,span{
+				font-size: 10px;
+			}
+		</style>
+		<script type="text/javascript" src="../js/lib/jquery-2.1.4.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var span = $('span').css('font-size');
+				var div = $('div').css('font-size');
+				var value = $("#showvalue");
+				value.html(span + '___' + div);
+			});
+		</script>
+	</head>
+
+	<body>
+		<span>sfe</span>
+		<div>awd</div>
+		<div id="showvalue"></div>
+	</body>
+
+</html>

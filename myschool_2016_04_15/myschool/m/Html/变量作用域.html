@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>变量声明，赋值</title>
+	</head>
+
+	<body>
+	</body>
+	<script type="text/javascript">
+		//"use strict";
+		var b = [];
+		for (var i = 0; i < 10; i++) {
+			b[i] = function() {
+				console.log(i);
+			}
+		}
+		b[4](); //10
+		
+		function c() {
+			var d = 4;
+
+			function e() {
+				console.log(d);
+				var d = 10;
+			}
+			return e;
+		}
+		c()(); //undefined
+		
+		var f = 5;
+		console.log(f--);
+		console.log(--f);
+		var g = f-- - --f;
+		console.log(g); //恒2
+		
+		console.log(h);
+		var h;
+		ii = 2; //严格模式报错
+		function j() {
+			k = 10; //严格模式报错
+		}
+		j();
+		console.log(k);
+		
+		var l = Object.prototype.toString.call([]); //"[object Array]"
+		
+		var m = null + undefined;
+		console.log('null + undefined = ' + m);
+		
+		var n = (null + 2) * 2 - 1;
+		console.log('(null + 2) * 2 - 1 = ' + n);
+		var o = undefined + 0;
+		console.log('undefined + 0 = ' + o);
+		
+		var p = null == undefined;
+		console.log('null == undefined is ' + p);//Javascript高级程序设计提到 undefined派生自null
+		
+		var q = 070;
+		console.log('070 = ' + q);
+		
+		var r = 0xabc;
+		console.log('0xabc = ' + r);//在进行算术运算时，所有以八进制和十六进制表示的数值最终都将被转换成十进制数值
+		
+		var s = typeof NaN;
+		console.log('typeof NaN = ' + s);
+	</script>
+
+</html>

@@ -1,0 +1,387 @@
+[
+{
+    "title": "旧--管理后台",
+    "domain": "admin.dingding.jiashuangkuaizi.com",
+    "type": "http",
+    "url": [
+        "http://admin.dingding.jiashuangkuaizi.com/pages/sku/list.html"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": "http://admin.dingdingfresh.com/pages/sku/list.html"
+    }]
+},
+{
+    "title": "旧--管理后台健康检查",
+    "domain": "admin.dingding.jiashuangkuaizi.com",
+    "type": "http",
+    "url": [
+        "http://admin.dingding.jiashuangkuaizi.com/health"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": ""
+    }]
+},
+{
+    "title": "旧--管理后台api健康检查",
+    "domain": "admin.dingding.jiashuangkuaizi.com",
+    "type": "http",
+    "url": [
+        "http://admin.dingding.jiashuangkuaizi.com/api/admin/system/health"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": ""
+    }]
+},
+{
+    "title": "新--管理后台健康检查",
+    "domain": "admin.dingdingfresh.com",
+    "type": "http",
+    "url": [
+        "http://admin.dingdingfresh.com/health"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": ""
+    }]
+},
+{
+    "title": "新--管理后台",
+    "domain": "admin.dingdingfresh.com",
+    "type": "http",
+    "url": [
+        "http://admin.dingdingfresh.com/pages/sku/list.html"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": "http://admin.dingding.jiashuangkuaizi.com/pages/sku/list.html"
+    }]
+},
+{
+    "title": "新--管理后台api健康检查",
+    "domain": "admin.dingding.jiashuangkuaizi.com",
+    "type": "http",
+    "url": [
+        "http://admin.dingding.jiashuangkuaizi.com/api/admin/system/health"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": ""
+    }]
+},
+{
+    "title": "新--管理后台",
+    "domain": "admin.dingdingfresh.com",
+    "type": "http,https",
+    "url": [
+        "http://admin.dingdingfresh.com/pages/sku/list.html"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": "http://admin.dingding.jiashuangkuaizi.com/pages/sku/list.html"
+    }]
+},
+{
+    "title": "旧--前端商城",
+    "domain": "m.jiashuangkuaizi.com,m.jiashuangkuaizi.com.cn",
+    "type": "http,https",
+    "url": [
+        "http://m.jiashuangkuaizi.com/dingding/biz/mall/login",
+        "http://m.jiashuangkuaizi.com.cn/dingding/biz/mall/login",
+        "https://m.jiashuangkuaizi.com/dingding/biz/mall/login",
+        "https://m.jiashuangkuaizi.com.cn/dingding/biz/mall/login"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": "http://mall.dingdingfresh.com/shop/mall/login"
+    }]
+},
+{
+    "title": "旧--微信签名api",
+    "domain": "m.jiashuangkuaizi.com,m.jiashuangkuaizi.com.cn",
+    "type": "http,https",
+    "url": [
+        "http://m.jiashuangkuaizi.com/dingding/biz/getWXSignature",
+        "http://m.jiashuangkuaizi.com.cn/dingding/biz/getWXSignature",
+        "https://m.jiashuangkuaizi.com/dingding/biz/getWXSignature",
+        "https://m.jiashuangkuaizi.com.cn/dingding/biz/getWXSignature"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    }]
+},
+{
+    "title": "新--前端商城",
+    "domain": "mall.dingdingfresh.com",
+    "type": "http,https",
+    "url": [
+        "http://mall.dingdingfresh.com/shop/mall/login",
+        "https://mall.dingdingfresh.com/shop/mall/login"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": "https://m.jiashuangkuaizi.com/dingding/biz/mall/login"
+    }]
+},
+{
+    "title": "新--微信签名api",
+    "domain": "mall.dingdingfresh.com",
+    "type": "http,https",
+    "url": [
+        "http://mall.dingdingfresh.com/shop/wXSignature",
+        "https://mall.dingdingfresh.com/shop/wXSignature"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    }]
+},
+{
+    "title": "旧--数据系统",
+    "domain": "dashboard.dingding.jiashuangkuaizi.com",
+    "type": "http",
+    "url": [
+        "http://dashboard.dingding.jiashuangkuaizi.com/shop/daily/data"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": "http://dingdingfresh.com/shop/daily/data"
+    }]
+},
+{
+    "title": "新--数据系统健康检查",
+    "domain": "dashboard.dingdingfresh.com",
+    "type": "http",
+    "url": [
+        "http://dashboard.dingdingfresh.com/system/health"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": ""
+    }]
+},
+{
+    "title": "新--数据系统",
+    "domain": "dashboard.dingdingfresh.com",
+    "type": "http",
+    "url": [
+        "http://dashboard.dingdingfresh.com/shop/daily/data"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": "http://dashboard.dingding.jiashuangkuaizi.com/shop/daily/data"
+    }]
+}]

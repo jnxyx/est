@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" language="javascript">
+//			function PreviewImg(imgFile) {
+//				var imgDiv = document.getElementById("gggg");
+//				imgDiv.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod = scale)";
+//				imgDiv.filters("DXImageTransform.Microsoft.AlphaImageLoader").src = imgFile.value;
+//			}
+		</script>
+		<script type="text/javascript" language="javascript">
+			function PreviewImg(imgFile) {
+					var newPreview = document.getElementById("newPreview");
+					var imgDiv = document.createElement("div");
+					document.body.appendChild(imgDiv);
+					imgDiv.style.width = "118px";
+					imgDiv.style.height = "127px";
+					imgDiv.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod = scale)";
+					imgDiv.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgFile.value;
+					newPreview.appendChild(imgDiv);
+					var showPicUrl = document.getElementById("showPicUrl");
+					showPicUrl.innerText = imgFile.value;
+					newPreview.style.width = "80px";
+					newPreview.style.height = "60px";
+					var formdata = new FormData();
+					
+				}
+		</script>
+	</head>
+
+	<body>
+		<form id="form1" runat="server">
+			<div>
+				<input type="file" ID="fp" onchange="javascript:PreviewImg(this);" />
+			</div>
+			<div id="gggg" style="width: 300px; height: 300px">
+			</div>
+			<div id="newPreview"></div>
+			<div id="showPicUrl"></div>
+			<hr />
+			<p>
+				选择图片：
+				<input type="file" size="20" onchange="javascript:PreviewImg(this);" />
+			</p>
+		</form>
+	</body>
+
+</html>

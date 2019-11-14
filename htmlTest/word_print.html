@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang=zh-cn>
+
+	<head>
+		<meta charset=utf-8>
+		<title>css3遮罩</title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			body {
+				/*background: #000;*/
+				margin: 0px;
+				padding: 0px;
+				font-size: 14px;
+				color: #fff;
+			}
+			
+			.tips {
+				width: 800px;
+				margin: 0 auto;
+				line-height: 24px;
+				padding-top: 10px;
+			}
+			
+			.bredcolor {
+				color: #fff;
+			}
+			
+			.shade {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -407px;
+				font-size: 68px;
+				font-weight: bold;
+				color: #487a1b;
+				background: #333 -webkit-linear-gradient(-15deg, #000 5%, rgba(255, 255, 255, .7), rgba(255, 255, 255, .9), rgba(255, 255, 255, .7), #000 10%) no-repeat;
+				-webkit-box-reflect: below 0 -webkit-linear-gradient(transparent, transparent 50%, rgba(255, 255, 255, .6));
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				-webkit-animation: cliptexttop 3s linear infinite;
+				text-transform: uppercase;
+			}
+			
+			@-webkit-keyframes cliptexttop {
+				0% {
+					background-position: left 0;
+				}
+				100% {
+					background-position: 1200px 0;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<section class="tips">
+			<p class="bredcolor">css3小技巧:</p>
+			CSS3做的遮罩效果，在css2.0时代,text是不能做渐变，以图片做背景等，css3.0时代也是做不到的，是css3.0可以借助其他属性来完成的。<br> -webkit-background-clip:text; 文本裁剪<br> -webkit-text-fill-color:transparent; 文本颜色透明<br> 以上这两样做完后，你就可以做自己喜欢的文字了，比如加个banckground
+			<br> 这几样只能做到让文本填充颜色或者背景图片等;
+			<br> 光影的运动显然要有位置变化，所以要用keyframes来扶助完成
+			<br> qq群:197326136
+			<br>
+		</section>
+		<section class="shade">
+			css3 background-clip
+		</section>
+	</body>
+
+</html>

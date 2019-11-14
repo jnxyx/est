@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>object</title>
+		<script type="text/javascript">
+			console.log(2..toString())
+		    console.log(2 .toString())
+			//			console.log(2.toString())//errorvar 
+			obj = {
+				bar: 1,
+				foo: 2,
+				baz: 3
+			};
+			obj.bar = undefined;
+			obj.foo = null;
+			delete obj.baz;
+			for (var i in obj) {
+				if (obj.hasOwnProperty(i)) {
+					console.log(i, '' + obj[i]);
+				}
+			}
+			
+			// 修改Object.prototype
+			Object.prototype.bar = 1; 
+			var foo = {goo: undefined};
+			foo.bar; // 1
+			'bar' in foo; // true
+			console.log(foo.hasOwnProperty('bar')); // false
+			console.log(foo.hasOwnProperty('goo')); // true
+			
+			var foo = {
+			    hasOwnProperty: function() {
+			        return false;
+			    },
+			    bar: 'Here be dragons'
+			};
+			console.log(foo.hasOwnProperty('bar')); // 总是返回 false
+			// 使用其它对象的 hasOwnProperty，并将其上下文设置为foo
+			console.log(({}).hasOwnProperty.call(foo, 'bar')); // true
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

@@ -1,0 +1,457 @@
+[
+{
+    "title": "旧---商城API系统",
+    "domain": "api.dingding.jiashuangkuaizi.com",
+    "type": "http,https",
+    "url": [
+        "http://api.dingding.jiashuangkuaizi.com/shop/swagger-ui.html",
+        "https://api.dingding.jiashuangkuaizi.com/shop/swagger-ui.html"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "200",
+        "respones": "",
+        "location": "https://api.dingdingfresh.com/shop/swagger-ui.html"
+    }]
+},
+{
+    "title": "旧---商城API系统健康检查",
+    "domain": "api.dingding.jiashuangkuaizi.com",
+    "type": "http",
+    "url": [
+        "http://api.dingding.jiashuangkuaizi.com/shop/system/health"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": ""
+    }]
+},
+{
+    "title": "旧---管理后台API系统",
+    "domain": "api.dingding.jiashuangkuaizi.com",
+    "type": "http,https",
+    "url": [
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": "123"
+    }]
+},
+{
+    "title": "旧---管理后台API系统健康检查",
+    "domain": "api.dingding.jiashuangkuaizi.com",
+    "type": "http",
+    "url": [
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": "123"
+    }]
+},
+{
+    "title": "旧---BD服务API系统",
+    "domain": "api.dingding.jiashuangkuaizi.com",
+    "type": "http,https",
+    "url": [
+        "http://api.dingding.jiashuangkuaizi.com/bd/swagger-ui.html",
+        " http://api.dingding.jiashuangkuaizi.com/bd/swagger-ui.html"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": "https://api.dingdingfresh.com/bd/swagger-ui.html"
+    }]
+},
+{
+    "title": "旧---BD服务API系统健康检查",
+    "domain": "api.dingding.jiashuangkuaizi.com",
+    "type": "http",
+    "url": [
+        "http://api.dingding.jiashuangkuaizi.com/bd/system/health"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": ""
+    }]
+},
+{
+    "title": "旧---营销API系统",
+    "domain": "api.dingding.jiashuangkuaizi.com",
+    "type": "http,https",
+    "url": [
+        "http://api.dingding.jiashuangkuaizi.com/market/swagger-ui.html",
+        "https://api.dingding.jiashuangkuaizi.com/market/swagger-ui.html"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "200",
+        "respones": "",
+        "location": "http://api.dingdingfresh.com/market/swagger-ui.html"
+    }]
+},
+{
+    "title": "旧---营销API系统健康检查",
+    "domain": "api.dingding.jiashuangkuaizi.com",
+    "type": "http",
+    "url": [
+        "http://api.dingding.jiashuangkuaizi.com/market/system/health"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    }]
+},
+{
+    "title": "新---商城API系统",
+    "domain": "api.dingdingfresh.com",
+    "type": "http,https",
+    "url": [
+        "http://api.dingdingfresh.com/shop/swagger-ui.html",
+        "https://api.dingdingfresh.com/shop/swagger-ui.html"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "200",
+        "respones": "",
+        "location": "https://api.dingding.jiashuangkuaizi.com/shop/swagger-ui.html"
+    }]
+},
+{
+    "title": "新---商城API系统健康检查",
+    "domain": "api.dingdingfresh.com",
+    "type": "http,https",
+    "url": [
+        "http://api.dingdingfresh.com/shop/system/health",
+        "https://api.dingdingfresh.com/shop/system/health"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": ""
+    }]
+},
+{
+    "title": "新---管理后台API系统",
+    "domain": "api.dingdingfresh.com",
+    "type": "http,https",
+    "url": [
+        "http://api.dingdingfresh.com/admin/swagger-ui.html",
+        "https://api.dingdingfresh.com/admin/swagger-ui.html"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": "123"
+    }]
+},
+{
+    "title": "新---管理后台API系统健康检查",
+    "domain": "api.dingdingfresh.com",
+    "type": "http,https",
+    "url": [
+        "http://api.dingdingfresh.com/admin/system/health",
+        "https://api.dingdingfresh.com/admin/system/health"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": ""
+    }]
+},
+{
+    "title": "新---BD服务API系统",
+    "domain": "api.dingdingfresh.com",
+    "type": "http,https",
+    "url": [
+        "http://api.dingding.jiashuangkuaizi.com/bd/swagger-ui.html",
+        "https://api.dingding.jiashuangkuaizi.com/bd/swagger-ui.html"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": "https://api.dingding.jiashuangkuaizi.com/bd/swagger-ui.html"
+    }]
+},
+{
+    "title": "新---BD服务API系统健康检查",
+    "domain": "api.dingdingfresh.com",
+    "type": "http,https",
+    "url": [
+        "http://api.dingdingfresh.com/bd/system/health",
+        "https://api.dingdingfresh.com/bd/system/health"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "302",
+        "respones": "",
+        "location": ""
+    }]
+},
+{
+    "title": "新---营销API系统",
+    "domain": "api.dingdingfresh.com",
+    "type": "http,https",
+    "url": [
+        "http://api.dingdingfresh.com/market/swagger-ui.html",
+        "https://api.dingdingfresh.com/market/swagger-ui.html"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "200",
+        "respones": "",
+        "location": "https://api.dingding.jiashuangkuaizi.com/market/swagger-ui.html"
+    }]
+},
+{
+    "title": "新---营销API系统健康检查",
+    "domain": "api.dingdingfresh.com",
+    "type": "http,https",
+    "url": [
+        "http://api.dingdingfresh.com/market/system/health",
+        "https://api.dingdingfresh.com/market/system/health"
+    ],
+    "result": [
+    {
+        "type": "正常流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    },
+    {
+        "type": "切流量",
+        "code": "200",
+        "respones": "叮叮鲜食欢迎您！温馨提示：服务器在00:00~04:00期间进行升级，请04:00之后再来吧~",
+        "location": ""
+    },
+    {
+        "type": "转发流量",
+        "code": "200",
+        "respones": "",
+        "location": ""
+    }]
+}]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

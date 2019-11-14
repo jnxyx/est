@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>动态获取鼠标</title>
+		<script type="text/javascript" src="../js/lib/jquery-2.1.4.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				$(document).mousemove(function(e){
+//					console.log(e);
+					$('#a').text(e.pageX+','+e.pageY);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<p id="a"></p>
+	</body>
+</html>

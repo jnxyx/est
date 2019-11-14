@@ -1,0 +1,205 @@
+<template>
+    <view class="my-main">
+            <!-- 未登录 -->
+            <div wx:if="{{ !isLogin }}" class="head-unlogin">
+                <div class="wrap">
+                    <image src="../img/wandou.png" mode="widthFix"></image>
+                    <p>找伙伴就上豌豆</p>
+                </div>
+                <div class="btn" @tap="toLogin">登录 / 注册</div>
+            </div>
+            <!-- 登录 -->
+            <div wx:if="{{ isLogin }}" class="head-login">
+                <div class="login-info">
+                    <p class="user-n">{{ userInfo.username }}</p>
+                    <p class="user-m" wx:if="{{ userInfo.mobile }}">
+                        <i class="icon icon-phone"></i>
+                        {{ userInfo.mobile }}
+                    </p>
+                </div>
+                <image class="avatar" src="{{ userInfo.avatar }}" mode="aspectFill"></image>
+            </div>
+            <ul class="items">
+                <li @tap="toService">
+                    <div>
+                        <span class="icon iconfont icon-kefu"></span>
+                        <span class="my-item">客服中心</span>
+                    </div>
+                    <i class="icon iconfont icon-jinru"></i>
+                </li>
+                <li @tap="toAbout">
+                    <div>
+                        <span class="icon iconfont icon-fuzhi"></span>
+                        <span class="my-item">关于豌豆</span>
+                    </div>
+                    <i class="icon iconfont icon-jinru"></i>
+                </li>
+            </ul>
+
+            <div v-if="isLogin" class="footer-btn" @tap="toLoginOut">
+                退出登录
+            </div>
+    </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  export default class My extends wepy.page {
+    config = {
+      navigationBarTitleText: '我的'
+    }
+
+    data = {
+        isLogin: false
+    }
+  }
+</script>
+<style lang="less">
+    .my-main {
+        background-color: #fff;
+        transition: all .1s ease-in-out;
+        .head-unlogin {
+            padding-top: 15px;
+            .wrap {
+                position: relative;
+                margin: 0 auto;
+                /*width: 162.5px;*/
+                height: 65px;
+            }
+            image {
+                margin: 0 auto;
+                width: 36.5px;
+                height: 36.5px;
+            }
+            p {
+                position:absolute;
+                top: 40.5px;
+                /*left: 11px;*/
+                letter-spacing: 7.5px;
+                font-size: 18px;
+                color: #52525A;
+                width: 100%;
+                text-align: center;
+            }
+            .btn {
+                margin: 17.5px auto 0;
+                width: 123px;
+                height: 35px;
+                text-align: center;
+                line-height: 35px;
+                border-radius: 35px;
+                font-size: 14px;
+                color: #fff;
+                background-color: #317AF1;
+                &:active {
+                    background-color: darken(#317AF1, 10%);
+                }
+            }
+        }
+
+        .head-login {
+            position: relative;
+            padding: 30px 0 10px;
+            margin: 0 25px;
+            .login-info {
+                display: block;
+                padding-right: 67.5px;
+                font-weight: 700;
+                line-height: 1;
+                p.user-n {
+                    font-size: 30px;
+                    color: #000332;
+                }
+                p.user-m {
+                    margin-top: 12.5px;
+                    font-size: 15px;
+                    color: #999;
+                }
+                .icon-phone {
+                    display: inline;
+                }
+            }
+            .avatar {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                margin-top: -16px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50px;
+            }
+        }
+
+        .items {
+            display: block;
+            padding: 35px 0;
+            margin: 0 15px;
+            li {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 10px;
+                height: 65px;
+                line-height: 65px;
+                font-size: 16px;
+                color: #121C32;
+                & > div {
+                    display: flex;
+                    align-items: center;
+                    .my-item {
+                        margin-left: 10px;
+                    }
+                }
+                .img-icon {
+                    display: inline-block;
+                    padding-bottom: 1px;
+                    margin-right: 16px;
+                    width: 18.5px;
+                    height: 7.5px;
+                    &.fix {
+                        height: 8.5px;
+                    }
+                }
+                .icon:last-child {
+                    padding: 0 4px;
+                }
+                &:active {
+                    background-color: darken(#fff, 2%);
+                }
+                &::after {
+                    content: ' ';
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 10px;
+                    right: 10px;
+                    height: 0.5px;
+                    background-color: #ccc;
+                    opacity: .4;
+                    transform: scaleY(.5);
+                }
+                &:last-child::after {
+                    display: none;
+                }
+            }
+        }
+
+        .footer-btn {
+            display: block;
+            margin: 0 25px 0;
+            height: 42px;
+            border-radius: 42px;
+            line-height: 42px;
+            text-align: center;
+            font-size: 18px;
+            color: #121C32;
+            border: 0.5px solid #9B9B9B;
+            background-color: #fff;
+            &:active {
+                color: darken(#121C32, 10%);
+                border-color: darken(#121C32, 10%);
+                background-color: rgba(49, 122, 241, .03);
+            }
+        }
+    }
+</style>

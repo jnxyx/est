@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>constructor___prototype</title>
+	</head>
+	<script type="text/javascript">
+		var m = function(a, b) {
+			return new m.fn.init(a, b)
+		}
+		m.fn = m.prototype = {
+			constructor: m,
+			init: function(a, b) {
+				return a + b;
+			}
+		}
+		var a = m(1, 2);
+		console.log(a);
+	</script>
+
+	<body>
+	</body>
+
+</html>

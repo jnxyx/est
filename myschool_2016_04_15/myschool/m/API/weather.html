@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>天气接口</title>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$.ajax({
+				type: "get",
+				url: "http://apis.baidu.com/apistore/weatherservice/citylist?cityname=%E6%9C%9D%E9%98%B3",
+				async: true,
+				crossDomain:true,
+				headers: {
+					"apikey": "7e512881bf982513f3242b49a0a0df97"
+				},
+				success: function(data) {
+					console.log(data)
+				}
+			});
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

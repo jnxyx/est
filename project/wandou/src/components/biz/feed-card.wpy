@@ -1,0 +1,88 @@
+<template>
+    <view class="feed-card-main">
+
+        <!-- 卡片头部信息 -->
+        <view class="feed-tit-box">
+            <!-- 用户头像 -->
+            <view class="feed-uhead">
+                <image class="feed-hsrc" src="{{ feedInfo.userHead }}"/>
+            </view>
+            <!-- 用户昵称 -->
+            <view class="feed-uname">{{ feedInfo.userName }}</view>
+        </view>
+
+        <!-- 卡片主体内容区 -->
+        <view class="feed-content">
+            <!-- 卡片内容 -->
+            <view class="feed-info">{{  feedInfo.content }}</view>
+            <!-- 卡片内容图片 -->
+            <view class="feed=info-imgs">
+
+            </view>
+        </view>
+
+        <!-- 卡片底部功能区 -->
+        <view class="feed-foot">
+            <!-- 分享 -->
+            <view class="icon iconfont icon-fenxiang share"></view>
+            <!-- 评论 -->
+            <view class="icon iconfont icon-dianzan comment"></view>
+            <!-- 点赞 -->
+            <view class="icon iconfont icon-xiaoxi zan"></view>
+        </view>
+
+    </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  export default class FeedCard extends wepy.component {
+    props = {
+      feedInfo: {
+        type: [Object],
+        default: {
+          userHead: 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLdl1Xicct1mSbicHdMiaXiaibFicibuMQJC2zWEMVC9VWhlNpFOyR59eO7hHJeaK8dtiaClHRW64zDtO9EFg/132',
+          userName: '江南',
+          content: '天上掉馅饼, 的好事？ 的好事情？ 的。的？',
+          contentImgs: []
+        }
+      }
+    }
+  }
+</script>
+<style lang="less">
+    .feed-card-main {
+        background-color: #fff;
+        padding: 20px;
+        box-sizing: border-box;
+        box-shadow: 0 5px 10px rgba(87, 115, 169, .05);
+
+        .feed-tit-box {
+            display: flex;
+            align-items: center;
+
+            .feed-uhead {
+
+                .feed-hsrc, image {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                }
+            }
+            .feed-uname {
+                font-size: 18px;
+                margin-left: 15px;
+            }
+        }
+
+        .feed-content {
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .feed-foot {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+</style>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>flex 弹性布局测试</title>
+</head>
+<style type="text/css">
+.container {
+    display: flex;
+    /*flex-direction: row-reverse;*/
+    flex-wrap: nowrap;
+    background-color: #eee;
+    width: calc(100% - 20px*2);
+    height: 200px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+.item{
+	width: 100px;
+	height: 50px;
+	background-color: #ddd;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.order2{
+	order: 2;
+}
+.order3{
+	order: 3;
+}
+
+.flexGrow1{
+	flex-grow: 0;
+}
+.flexGrow2{
+	flex-grow: 1;
+}
+
+.tb2{
+	background-color: #eee;
+}
+</style>
+
+<body>
+    <div class='container'>
+        <div class='item order3'>元素一</div>
+        <div class='item order2'>元素二</div>
+    </div>
+
+    <div class="tb2">
+    	<div class="item">元素三</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>instanceof</title>
+	</head>
+	<script type="text/javascript">
+		function aa() {
+			var _aa = 1;
+			return _aa;
+		}
+
+		function bb() {
+			var _bb = {};
+			return _bb;
+		}
+
+		function cc() {
+			this._bb = {};
+			return this;
+		}
+
+		function dd() {
+			var d = [];
+			return d;
+		}
+
+		function ee() {
+			return 'ee'
+		}
+
+		function ff() {
+			return false;
+		}
+		var a = new aa();
+		var b = new bb();
+		var c = new cc();
+		var d = new dd();
+		var e = new ee();
+		var f = new ff();
+		console.log(a instanceof aa);
+		console.log(b instanceof bb);
+		console.log(c instanceof cc);
+		console.log(d instanceof dd);
+		console.log(e instanceof ee);
+		console.log(f instanceof ff);
+		console.log(a);
+		console.log(b);
+		console.log(c);
+		console.log(d);
+		console.log(e);
+		console.log(f);
+	</script>
+
+	<body>
+	</body>
+
+</html>

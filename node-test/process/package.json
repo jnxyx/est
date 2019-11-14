@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "commander": "2.11.0"
+  },
+  "scripts": {
+    "init": "npm install"
+  }
+}

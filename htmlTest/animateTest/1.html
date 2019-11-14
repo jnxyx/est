@@ -1,0 +1,101 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+    <title>动画测试</title>
+    <!-- <script type="text/javascript" src='animate.js'></script> -->
+</head>
+<style type="text/css">
+#boll {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: grey;
+}
+</style>
+
+<body>
+    <button id='freefall'>自由落体运动</button>
+    <button id='sine'>简谐运动</button>
+    <div id='boll'></div>
+</body>
+<script type="text/javascript">
+let requestAniFrame = (function() {
+    return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function(callback) {
+            return window.setTimeout(callback, 1000 / 60);
+        };
+})()
+
+let cancelAnimFrame = (function() {
+    return window.cancelAnimationFrame ||
+        window.webkitCancelAnimationFrame ||
+        window.mozCancelAnimationFrame ||
+        window.oCancelAnimationFrame ||
+        window.msCancelAnimationFrame ||
+        function(callback) {
+            return window.clearTimeout(callback, 1000 / 60);
+        };
+})()
+
+let easeOutSine = t => {
+    return -1 * Math.cos(t / 1 * (Math.PI / 2)) + 1
+}
+let easeInQuad = t => {
+    return t * t
+}
+window.onload = function() {
+    let boll = document.getElementById('boll')
+    let freefall = document.getElementById('freefall')
+    let sine = document.getElementById('sine')
+
+    let t = 0
+    let length = 200
+
+    let freefallTime = null
+    let sineTime = null
+    let sineact = () => {
+        let left = +boll.style.left.split('px')[0]
+
+        left = 2 * length - length * easeOutSine(t / 2 / Math.PI)
+
+        boll.style.left = left + 'px'
+
+        t += 1 / 4
+        sineTime = requestAniFrame(sineact)
+    }
+
+    let drowdown = () => {
+        let top = +boll.style.left.split('px')[0]
+        top = 1 / 2 * 9.8 * easeInQuad(t)
+
+        boll.style.top = top + 'px'
+        t += 1 / 4
+        if (top > 600) {
+            t = 0
+        }
+        freefallTime = requestAniFrame(drowdown)
+    }
+
+    freefall.onclick = function() {
+    	cancelAnimFrame(sineTime)
+        requestAniFrame(drowdown)
+    }
+
+    sine.onclick = function() {
+    	cancelAnimFrame(freefallTime)
+        requestAniFrame(sineact)
+    }
+
+
+}
+</script>
+
+</html>

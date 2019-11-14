@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>统计字符</title>
+</head>
+
+<body>
+    <input id="input" type="text" placeholder="请输入字符串" />
+    <p id="p"></p>
+</body>
+<script type="text/javascript">
+function getChar(string) {
+    var obj = {},
+        maxNumber = 0,
+        maxChar;
+
+    for (var i = string.length - 1; i >= 0; i--) {
+        if (obj[string[i]]) {
+            obj[string[i]]++;
+        } else {
+            obj[string[i]] = 1;
+        }
+    }
+    console.log(obj);
+
+    for (var char in obj) {
+        if (obj[char + ''] > maxNumber) {
+            maxNumber = obj[char + ''];
+            maxChar = char;
+        }
+    }
+
+    return {
+        maxNumber: maxNumber,
+        maxChar: maxChar
+    }
+}
+
+window.onload = function() {
+    document.getElementById('input').onkeyup = function() {
+        var string = document.getElementById('input').value;
+        var result = getChar(string);
+        document.getElementById('p').innerHTML = 'maxNumber:' + result.maxNumber + '<br/>' + 'maxChar:' + result.maxChar;
+    };
+
+}
+</script>
+
+</html>

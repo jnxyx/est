@@ -1,0 +1,3 @@
+define(['obj'], function() {
+    return {};
+})

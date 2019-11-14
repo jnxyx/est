@@ -1,0 +1,71 @@
+<template>
+    <view class="ui-mask {{ showClass }}" @tap="tapMask"></view>
+</template>
+<script>
+    import wepy from 'wepy';
+
+    export default class UiMask extends wepy.component {
+        data = {
+            show: false,
+            showClass: 'hide'
+        }
+
+        watch = {
+            // 渐显/渐隐控制
+            ['show'](newVal, oldVal) {
+                if (newVal !== oldVal) {
+                    if (newVal) {
+                        this.showClass ='';
+                        setTimeout(() => {
+                            this.showClass ='trans-show';
+                            this.$apply();
+                        }, 0);
+                    }
+                    else {
+                        this.showClass ='';
+                        setTimeout(() => {
+                            this.showClass ='hide';
+                            this.$apply();
+                        }, 350);
+                    }
+                }
+            }
+        }
+
+        computed = {
+        }
+
+        methods = {
+            showOut() {
+                this.show = true;
+            },
+            hideIn() {
+                this.show = false;
+            },
+            tapMask() {
+                this.$emit('mask-tap')
+            }
+        }
+    }
+</script>
+<style lang="less">
+    .ui-mask {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.6);
+        transition: opacity .35s ease-in-out;
+        opacity: 0;
+        // 渐显/渐隐控制
+        &.trans-show {
+            opacity: 1;
+        }
+        &.hide {
+            display: none;
+        }
+    }
+</style>
+

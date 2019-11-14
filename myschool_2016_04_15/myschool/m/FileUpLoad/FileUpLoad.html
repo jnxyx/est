@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>多文件上传</title>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script type="text/javascript" src="ajaxfileupload.js"></script>
+		<!--<script type="text/javascript" src="upload.js"></script>-->
+	</head>
+	<style type="text/css">
+		.file {
+			position: relative;
+			display: inline-block;
+			background: #D0EEFF;
+			border: 1px solid #99D3F5;
+			border-radius: 4px;
+			padding: 4px 12px;
+			overflow: hidden;
+			color: #1E88C7;
+			text-decoration: none;
+			text-indent: 0;
+			line-height: 20px;
+		}
+		.file input {
+			position: absolute;
+			font-size: 100px;
+			right: 0;
+			top: 0;
+			opacity: 0;
+		}
+		.file:hover {
+			background: #AADFFD;
+			border-color: #78C3F3;
+			color: #004974;
+			text-decoration: none;
+		}
+	</style>
+
+	<body>
+
+		<script>
+			var version = parseFloat(navigator.appVersion.split("MSIE")[1]);
+			function testbrowser(){
+				if(window.ActiveXObject){
+					document.getElementsByTagName("input")[0].isMultiLine =true;
+				}
+			}
+			function yulan(file, id) {
+				if (file.value.indexOf(".jpg") < 0 && file.value.indexOf(".jpeg") < 0 && file.value.indexOf(".gif") < 0 && file.value.indexOf(".png") < 0 && file.value.indexOf(".JPG") < 0 && file.value.indexOf(".JPEG") < 0 && file.value.indexOf(".GIF") < 0 && file.value.indexOf(".PNG") < 0) {
+					alert('您选择的不是图片文件');
+					return false;
+				}
+				$.ajaxFileUpload({
+					url: 'FileUpLoad.php',
+					secureuri: false,
+					fileElementId: 'fileToUpload', //file标签的id
+					dataType: 'json', //返回数据的类型
+					data: {
+						name: 'logan'
+					}, //一同上传的数据
+					success: function(data, status) {
+						alert(data.file)
+						//把图片替换
+						console.log(data)
+						console.log(data.file);
+					},
+					error: function(data, status, e) {
+						console.log("error");
+						console.log(e);
+					}
+				});
+				if (navigator.userAgent.indexOf("Mozilla/5.") > -1) {
+					document.getElementById(id).innerHTML = "<img src='" + file.files[0].getAsDataURL() + "'>";
+					CheckFileSize(file.files[0].getAsDataURL(), id); //if(CheckFileSize(file.files[0].getAsDataURL())>328)document.getElementById(id).getElementsByTagName('img')[0].style.width = "328px";
+				} else {
+					file.select();
+					var img = document.selection.createRange().text;
+					document.getElementById(id).innerHTML += "<img src='" + img + "'>";
+					if (CheckFileSize(file.value) > 328) document.getElementById(id).getElementsByTagName('img')[0].style.width = "328px";
+				}
+			}
+			window.onload = testbrowser;
+		</script>
+		<div id="tu"></div>
+		<form name="form1" method="POST" enctype="multipart/form-data">
+			<a href="javascript:;" class="file">选择文件
+				<input id="fileToUpload" type="file" name="UpFile" size="46" onchange="yulan(this,'tu')" multiple="multiple">
+			</a>
+			<div id="preview"></div>
+		</form>
+	</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>资源加载进度测试</title>
+</head>
+<script type="text/javascript">
+/*
+ * 资源加载插件
+ *
+ */
+
+function jnLoaded(config) {
+    var args = Object.assign({
+        origin: '',
+        resources: [],
+        process: null,
+        complete: null
+    }, config)
+    var resLen = resources.length
+    var pcs = resLen
+    pcs === 0 && 'function' === typeof(args.complete) && args.complete()
+    resources.forEach(function(item, index) {
+        var img = new Image()
+        img.src = args.origin ? args.origin + item : item
+        img.onload = function() {
+            pcs--
+            'function' === typeof(args.process) && args.process.call(null, {
+                pcs: (resLen - pcs) + '/' + resLen,
+                pct: (100 * (resLen - pcs) / resLen).toFixed(2) + '%'
+            })
+            pcs === 0 && 'function' === typeof(args.complete) && args.complete()
+        }
+    })
+}
+</script>
+<script type="text/javascript">
+var resources = [
+    'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1413195817,3557375826&fm=27&gp=0.jpg',
+    'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517412316918&di=1344189808e5ee331e2b9520cb1633a0&imgtype=0&src=http%3A%2F%2Farticle.fd.zol-img.com.cn%2Ft_s500x2000%2Fg3%2FM0A%2F00%2F0A%2FCg-4WFTB4RWIK6vaAACdeqdmq7MAAT59AJgBIQAAJ2S045.jpg',
+    'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517412316916&di=0c4db918aae04477c99c6ed5c35321a1&imgtype=0&src=http%3A%2F%2Fi3.sinaimg.cn%2FIT%2Fn%2F2009-11-23%2F1258955868_f5tU7J.jpg',
+    'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517412316916&di=fcfd66cb774651c7a1b071ac22553b1c&imgtype=0&src=http%3A%2F%2Fwww.gameres.com%2Fdata%2Fattachment%2Fforum%2F201412%2F01%2F181504oh5l2od3gdgtn3lo.jpg',
+    'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517412316915&di=9748f484cf09b66408e7fa58b60863d7&imgtype=0&src=http%3A%2F%2Fimg.douxie.com%2Fupload%2Fupload%2F2015%2F08%2F10%2F55c83280bce7c.jpg',
+    'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517412316915&di=9685dc3daf817f07d08abeac518034ad&imgtype=0&src=http%3A%2F%2Fimg.uwp.mobi%2Fdata%2Fattachment%2Fforum%2F201601%2F10%2F102137fkmqmuzkudzktvja.jpg',
+    'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517412316915&di=0b9914ea677f7730a29fa4efca8f1355&imgtype=0&src=http%3A%2F%2Fpic.baike.soso.com%2Fp%2F20131202%2F20131202141336-506466135.jpg'
+]
+window.onload = function() {
+    jnLoaded({
+        resources: resources,
+        process: function(res) {
+            window.document.getElementById('process').innerText = '进度:' + res.pcs + '\t' + '百分比:' + res.pct
+        }
+    })
+
+}
+</script>
+
+<body>
+    <div id='process'></div>
+</body>
+
+</html>

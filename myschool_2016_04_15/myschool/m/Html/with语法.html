@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+	<script type="text/javascript">
+		"use strict";
+		var a = {};
+		a.a = function() {
+			return ~(17);
+		}
+		a.b = {
+			ba: 'xuyunxiang'
+		};
+		a.c = 'ijnan.com';
+//		with(a) { //严格模式下语法错误，大量使用导致性能下降，不建议使用
+//			console.log(a());
+//			console.log(b.ba);
+//			console.log(c);
+//		}
+
+		function c(arg1, arg2) {
+			arguments[1] = 10;
+			//arg2 = 12;
+			console.log('arg1 = ' + arg1 + '\narg2 = ' + arg2);
+			console.log('arguments[0] = ' + arguments[0] + '\narguments[1] = ' + arguments[1]);
+		}
+		c(1, 2);
+		c(1);
+	</script>
+
+</html>

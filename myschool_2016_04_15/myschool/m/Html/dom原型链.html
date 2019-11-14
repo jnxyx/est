@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>DOM_prototype</title>
+	</head>
+
+	<body>
+		<div id="div">aaaaaaa</div>
+		<span id="span"></span>
+	</body>
+	<script type="text/javascript">
+	    var clas= HTMLDivElement;
+		var proto = clas.prototype;
+		proto.jiangnan = function() {
+			console.log('jiangnan');
+		}
+		var obj = document.getElementById('div');
+		var spanobj = document.getElementById('span');
+		console.log(obj instanceof clas);
+		console.log(spanobj instanceof clas);
+		console.log(spanobj instanceof HTMLSpanElement);
+		obj.jiangnan();
+	</script>
+
+</html>

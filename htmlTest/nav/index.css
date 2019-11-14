@@ -1,0 +1,88 @@
+.container {
+    position: relative;
+    font-family: "Microsoft YaHei", SimSun, '\5b8b\4f53', sans-serif;
+    font-size: 14px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-main {
+    width: 1000px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.nav-container {
+    position: relative;
+    float: left;
+    z-index: 12;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    margin: 0 2px;
+}
+
+.hover a,
+a:hover,
+.red {
+    color: #e54077!important;
+}
+
+ul {
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+    filter: "alpha(opacity=95)";
+    background-color: rgba(238, 238, 238, .95);
+    width: 200px;
+    height: 300px;
+}
+
+.nav.li {
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.nav.li.hover,
+.nav.li:hover {
+    background-color: #fff;
+    color: #e54077!important;
+}
+
+.nav-tab {
+    float: left;
+    position: relative;
+    z-index: 11;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.block {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 500px;
+    height: 262px;
+    margin: 19px 30px;
+    overflow: hidden;
+    background-color: #fff;
+    display: none;
+    box-sizing: border-box;
+}
+
+.block div {
+    margin: 5px 2px;
+}
+
+.block div a {
+    margin: 0 10px;
+}

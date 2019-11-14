@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>window.foo</title>
+	</head>
+	<script type="text/javascript">
+		( window.foo || ( window.foo = "bar" ) );
+		console.log(window.foo);
+		console.log("i'm a lasagna hog".split(""));
+		console.log("i'm a lasagna hog".split("").reverse());
+		console.log("i'm a lasagna hog".split("").reverse().join(""));
+		var foo = [];
+		foo.push(1);
+		foo.push(2);
+		console.log(foo.length);
+		var foo = "Hello"; 
+		(function() { 
+		  var bar = " World"; 
+		  console.log(foo + bar); 
+		})(); 
+		alert(foo + bar);
+	</script>
+
+	<body>
+	</body>
+
+</html>

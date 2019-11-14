@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>obj_revalue</title>
+	</head>
+	<script type="text/javascript">
+		function addScript() {
+			var scr = document.createElement('script');
+			scr.type = 'text/javascript';
+			var scri = scr;
+			scr.src = '../js/lib/jquery.min.js';
+			scri.src = '../API/baidumap/js/map.js';
+			document.head.appendChild(scr);
+			//			document.head.appendChild(scri);
+		}
+
+		function object_re() {
+			var obj = {
+				name: 'xuyunxiang',
+				value: 'num0314'
+			}
+			var objr = obj;
+			objr.bar = 'bar';
+			console.log(obj);
+			console.log(obj === objr);
+		}
+		function str_re(){
+			var str='abcd';
+			var strr=str;
+			var strq=str;
+			strr='xuyunxiang';
+			strq.replace('a','x');
+			console.log(str);
+			console.log(strr);
+			console.log(strq);
+			console.log(str === strr);
+			console.log(str === strq);
+		}
+		function array_re(){
+			var arr=['a','b','c','d'];
+			var arrr=arr;
+			arrr[0]='x';
+			console.log(arr);
+			console.log(arr === arrr);
+		}
+		window.onload = function() {
+			addScript();
+			object_re();
+			str_re();
+			array_re();
+		}
+	</script>
+
+	<body>
+	</body>
+
+</html>

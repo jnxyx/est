@@ -1,0 +1,94 @@
+<template>
+    <view class="ui-toast {{ showClass }}">
+        {{ content }}
+    </view>
+</template>
+<script>
+    import wepy from 'wepy';
+
+    export default class UiToast extends wepy.component {
+
+        components = {
+        }
+
+        props = {
+        }
+
+        data = {
+            show: false,
+            showClass: 'hide',
+            content: ''
+        }
+
+        events = {
+        }
+
+        computed = {
+        }
+
+        watch = {
+            // 渐显/渐隐控制
+            ['show'](newVal, oldVal) {
+                if (newVal !== oldVal) {
+                    // 渐显/渐隐控制
+                    if (newVal) {
+                        this.showClass ='';
+                        setTimeout(() => {
+                            this.showClass ='trans-show';
+                            this.$apply();
+                        }, 0);
+                    }
+                    else {
+                        this.showClass ='';
+                        setTimeout(() => {
+                            this.showClass ='hide';
+                            this.$apply();
+                        }, 350);
+                    }
+                }
+            }
+        }
+
+        methods = {
+            showOut(content) {
+                this.content = content;
+                this.show = true;
+                setTimeout(() => {
+                    this.show = false;
+                    this.$apply();
+                }, 3000);
+            },
+            hideIn() {
+                this.show = false;
+            }
+        }
+    }
+</script>
+<style lang="less">
+    .ui-toast {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 11;
+        padding: 25rpx 60rpx;
+        box-sizing: border-box;
+        border-radius: 4rpx;
+        line-height: 1.5;
+        text-align: center;
+        font-size: 30rpx;
+        color: #fff;
+        background-color: rgba(0, 0, 0, .85);
+        transition: all .35s ease-in-out;
+        transform: translate(-50%, -50%) scale(.8);
+        opacity: 0;
+        // 渐显/渐隐控制
+        &.trans-show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        &.hide {
+            display: none;
+        }
+
+    }
+</style>

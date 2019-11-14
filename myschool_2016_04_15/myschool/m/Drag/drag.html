@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+	<meta charset="utf-8" />
+	<head>
+		<style type="text/css">
+			#div1 {width: auto; height: auto; min-width:488px;min-height:70px;padding:10px;border:1px solid #aaaaaa;}
+		</style>
+		<script type="text/javascript">
+			function allowDrop(ev)
+			{
+				ev.preventDefault();
+			}
+			
+			function drag(ev)
+			{
+				ev.dataTransfer.setData("Text",ev.target.id);
+			}
+			
+			function drop(ev)
+			{
+				ev.preventDefault();
+				var data=ev.dataTransfer.getData("Text");
+				ev.target.appendChild(document.getElementById(data));
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<p id="p" draggable="true" ondragstart="drag(event)" >请把 W3School 的图片拖放到矩形中：</p>
+
+		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<br />
+		<img id="drag1" src="../img/bidProcess/pic_01.jpg" draggable="true" ondragstart="drag(event)" />
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+		  <polygon points="100,10 40,180 190,60 10,60 160,180"
+		  style="fill:red;stroke:blue;stroke-width:3;fill-rule:evenodd;" />
+		</svg>
+	</body>
+
+</html>

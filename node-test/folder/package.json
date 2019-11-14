@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "npm install && node folder.js",
+    "upload": "npm install && node postImg.js"
+  },
+  "dependencies": {
+    "request": "^2.87.0"
+  }
+}

@@ -1,0 +1,203 @@
+<template>
+    <view class="ui-loading {{ showClass }}">
+        <image class="bg" src="https://ducash-files.bj.bcebos.com/wechat/loading_bg.png" mode="aspectFill"></image>
+        <div class="wrap">
+            <div class="dot">
+                <span>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+            </div>
+            <div class="du"><image src="https://ducash-files.bj.bcebos.com/wechat/loading_du.png" mode="aspectFill"></image></div>
+            <p>正在加载...</p>
+        </div>
+    </view>
+    <Mask></Mask>
+</template>
+<script>
+    import wepy from 'wepy';
+
+    import Mask from '@/components/ui/mask';
+
+    export default class UiLoading extends wepy.component {
+
+        components = {
+            Mask
+        }
+
+        props = {
+        }
+
+        data = {
+            show: false
+        }
+
+        events = {
+        }
+
+        computed = {
+            showClass() {
+                return this.show ? 'show' : '';
+            }
+        }
+
+        watch = {
+            show(newVal, oldVal) {
+                if (newVal !== oldVal) {
+                    this.$invoke('Mask', newVal ? 'showOut' : 'hideIn');
+                }
+            }
+        }
+
+        methods = {
+            showOut() {
+                this.show = true;
+            },
+            hideIn() {
+                this.show = false;
+            }
+        }
+    }
+</script>
+<style lang="less">
+    .ui-loading {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -125rpx;
+        margin-left: -125rpx;
+        z-index: 11;
+        &.show {
+            display: block;
+        }
+        .bg {
+            width: 250rpx;
+            height: 250rpx;
+        }
+        .wrap {
+            padding-top: 35rpx;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 250rpx;
+            height: 250rpx;
+            text-align: center;
+            font-size: 24rpx;
+            color: #fff;
+            .dot {
+                position: relative;
+                top: 0;
+                left: 0;
+                margin: 0 auto 4rpx;
+                width: 48rpx;
+                height: 48rpx;
+                line-height: 48rpx;
+                border: 3rpx solid #fff;
+                border-radius: 48rpx;
+
+                @keyframes loadingUp {
+                    0% {
+                        top: 0;
+                    }
+                    50% {
+                        top: -10rpx;
+                    }
+                    100% {
+                        top: 0;
+                    }
+                }
+                animation: loadingUp 1.5s 0s infinite ease-in;
+                animation-fill-mode: both;
+
+                span {
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 13rpx;
+                    height: 12rpx;
+                    transform: translate(-50%, -50%);
+                    overflow: hidden;
+                    i {
+                        float: left;
+                        display: inline-block;
+                        width: 12rpx;
+                        height: 12rpx;
+                        border-radius: 12rpx;
+                        background-color: #fff;
+                    }
+
+                    @keyframes loadingDot {
+                        0% {
+                            width: 0;
+                        }
+                        25% {
+                            width: 12rpx;
+                        }
+                        50% {
+                            width: 24rpx;
+                        }
+                        75% {
+                            width: 36rpx;
+                        }
+                        100% {
+                            width: 0;
+                        }
+                    }
+                    animation: loadingDot 1.8s steps(1, start) 0s infinite normal;
+                    animation-fill-mode: both;
+                }
+            }
+            .du {
+                margin: 0 auto;
+                position: relative;
+                width: 78rpx;
+                height: 83rpx;
+                overflow: hidden;
+                image {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 156rpx;
+                    height: 83rpx;
+
+                    @keyframes loadingDu {
+                        0% {
+                            left: 0;
+                        }
+                        20% {
+                            left: -77rpx;
+                        }
+                        45% {
+                            left: 0;
+                        }
+                        50% {
+                            left: -77rpx;
+                        }
+                        55% {
+                            left: 0;
+                        }
+                        65% {
+                            left: -77rpx;
+                        }
+                        80% {
+                            left: 0;
+                        }
+                        100% {
+                            left: -77rpx;
+                        }
+                    }
+                    animation: loadingDu 1.8s steps(1, start) 0s infinite normal;
+                    animation-fill-mode: both;
+                }
+
+            }
+            p {
+                margin-top: 8rpx;
+            }
+        }
+    }
+
+</style>

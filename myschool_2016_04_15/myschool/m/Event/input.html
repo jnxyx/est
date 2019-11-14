@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>input事件</title>
+	</head>
+
+	<body>
+		<input type="text" oninput="s();" onchange="c();" />
+		<p></p>
+		<script type="text/javascript">
+			var ip = document.getElementsByTagName('input')[0];
+
+			function s() {
+				console.log(ip.value);
+			}
+
+			function c() {
+				console.log(ip.value);
+			}
+		</script>
+	</body>
+
+</html>

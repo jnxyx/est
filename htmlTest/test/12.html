@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		var a = {
+			n: 1
+		};
+		var b = a;
+		console.log(a);
+		console.log(b);
+		
+		//a重新赋值，b没有重新赋值
+		/**
+		 * < == >
+		 * a.x = undefined ( b.x = undefined )
+		 * a = {
+		 * 	 n: 2
+		 * }
+		 * b.x = a;
+		 */
+		a.x = a = {
+			n: 2
+		};
+		
+		console.log(a);
+		console.log(b);
+		console.log(a.x);
+		console.log(b.x);
+	</script>
+	<body>
+	</body>
+
+</html>

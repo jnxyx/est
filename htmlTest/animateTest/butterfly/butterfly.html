@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>butterfly</title>
+</head>
+<style type="text/css">
+body {
+    margin: 0;
+    padding: 0;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+}
+</style>
+
+<body>
+    <canvas id='canvas' width="1300" height="400"></canvas>
+</body>
+<script type="text/javascript" src="butterfly.js"></script>
+<script type="text/javascript">
+var canvas = document.getElementById('canvas')
+resetScreen()
+var tools = initButterfly(canvas)
+
+function resetScreen() {
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+    if (tools) {
+    	console.log('111')
+        tools.pen.translate(canvas.width / 2, canvas.height / 2)
+    }
+}
+window.onresize = resetScreen
+</script>
+
+</html>

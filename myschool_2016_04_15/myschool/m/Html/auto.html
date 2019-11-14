@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>auto自动完成</title>
+		<script type="text/javascript">
+			window.onload=function(){
+//				document.getElementById('a').click();
+				document.getElementById('a').oncopy();
+				document.getElementById('text').focus();
+			}
+		</script>
+	</head>
+
+	<body>
+		<a id="a" href="http://www.kongjianjia.com">锚点</a>
+		<input id="text" type="text" value="这是文本框" />
+	</body>
+
+</html>

@@ -1,0 +1,56 @@
+<template>
+    <view class="home-main">
+        <!-- 头部信息 -->
+        <view class="home-explore">
+            <input class="home-search" disabled="disabled" placeholder="搜索" type="text" name="">
+        </view>
+
+        <view class="home-feed">
+            <feed-card class="feed-item"></feed-card>
+            <feed-card class="feed-item"></feed-card>
+            <feed-card class="feed-item"></feed-card>
+            <feed-card class="feed-item"></feed-card>
+            <feed-card class="feed-item"></feed-card>
+        </view>
+    </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  import FeedCard from '../components/biz/feed-card'
+  export default class Home extends wepy.page {
+    config = {
+      navigationBarTitleText: ''
+    }
+    components = {
+      'feed-card': FeedCard
+    }
+  }
+</script>
+<style lang="less">
+    page {
+        background-color: #eeeeee;
+    }
+    .home-main {
+
+        .home-explore {
+            padding: 10px 30px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+
+            .home-search {
+                background-color: #eeeeee;
+                height: 30px;
+                line-height: 30px;
+                border-radius: 15px;
+                font-size: 14px;
+                padding: 0 15px;
+            }
+        }
+
+        .home-feed {
+            .feed-item {
+                margin-bottom: 10px;
+            }
+        }
+    }
+</style>

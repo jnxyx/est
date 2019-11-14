@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>事件写重</title>
+		<script type="text/javascript" src="../js/lib/jquery-2.1.4.js"></script>
+
+	</head>
+
+	<body>
+	</body>
+	<input type="button" id="btn" value="确定" />
+	<script type='text/javascript'>
+		//			console.log($('#btn').click);
+		$('#btn').click(function() {
+			console.log('one time');
+		});
+		$('#btn').click(function() {
+			console.log('two time');
+		})
+	</script>
+
+</html>

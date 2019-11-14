@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>__proto__</title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var targetElement = document.getElementsByTagName("div")[0];
+				var  newElement= document.createElement("div");
+				newElement.innerHTML = "这是一段新的html";
+				targetElement.parentNode.insertBefore(newElement,targetElement);
+				for(var t in targetElement.__proto__){
+					console.log(t + "\t" + (typeof t))
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

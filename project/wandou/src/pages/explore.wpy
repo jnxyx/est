@@ -1,0 +1,16 @@
+<template>
+    <view class="explore-main">
+
+    </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  export default class Explore extends wepy.page {
+
+  }
+</script>
+<style lang="less">
+    .explore-main {
+        background-color: #fff;
+    }
+</style>

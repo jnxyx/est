@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>作用域链</title>
+	</head>
+
+	<body>
+	</body>
+	<script type="text/javascript">
+		var a = 10;
+
+		function b() {
+			var c = 12;
+
+			function d() {
+				console.log(c);
+				console.log(a);
+				var c = 12;
+			}
+			
+			return d;
+		}
+		b()();
+		//作用域链顺序 ，arguments => 内部变量 => 包含环境变量 => 下一个包含环境 => ......
+	</script>
+
+</html>

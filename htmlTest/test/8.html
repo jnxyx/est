@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>add()()</title>
+	</head>
+	<script type="text/javascript">
+		function add(a, b) {
+			console.log("arguments -- ")
+			console.log(arguments)
+			console.log("arguments.callee -- ")
+			console.log(arguments.callee)
+			if ("undefined" != typeof a && "undefined" != typeof b) {
+				console.log(a + b);
+			} else if ("undefined" !== typeof a && "undefined" === typeof b) {
+				var t = this;
+				var c = 0;
+				c = t.valueOf() + a;
+				if ("number" === typeof t.valueOf()) {
+					console.log(c);
+				}
+				return function(b) {
+					console.log("arguments -- ")
+					console.log(arguments)
+					console.log("arguments.callee -- ")
+					console.log(arguments.callee)
+					if ("number" === typeof t.valueOf()) {
+						return add.call(c, b);
+					} else {
+						return add.call(a, b)
+					}
+					//					console.log(a + b);
+				}
+			}
+		}
+		add(2, 5);
+		add(2)(5);
+		add(2)(5)(8);
+		add(2)(5)(8)(10);
+		add(2)(5)(8)(11)(14);
+
+		function addd(num) {
+			var count = 0;
+			count += num;
+			return function(num) {
+				if (arguments[0] !== undefined) {
+					count += num;
+					return arguments.callee;
+				} else {
+					return count;
+				}
+			}
+		}
+		var result = addd(1)(2)(3)(4)(5)();
+		console.log(result)
+		alert(result)
+	</script>
+
+	<body>
+	</body>
+
+</html>

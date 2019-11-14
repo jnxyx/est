@@ -1,0 +1,9 @@
+Host gitlab.com
+    HostName gitlab.corp.jiashuangkuaizi.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/gitlab_id-rsa
+
+Host github.com
+    HostName github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/github_id-rsa

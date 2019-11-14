@@ -1,0 +1,17 @@
+{
+  "author": {
+    "name": "Jeff Carpenter",
+    "email": "gcarpenterv@gmail.com"
+  },
+  "description": "一套特定的活动UI组件",
+  "devDependencies": {},
+  "files": [
+    "index.js",
+    "lib/"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "aatest start"
+  },
+  "version": "1.0.0"
+}

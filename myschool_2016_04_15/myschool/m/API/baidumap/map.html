@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width: 100%;
+				height: 100%;
+			}
+			#search{
+				margin: 100px auto auto 200px;
+			}
+		</style>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Yox6TNP6DIdh7vXsek48CXav"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/library/RichMarker/1.2/src/RichMarker_min.js "></script>
+		<script type="text/javascript">
+			var search;
+			function initialize() {
+				var mp = new BMap.Map('map');
+				mp.centerAndZoom(new BMap.Point(121.491, 31.233), 11);
+				var ac = new BMap.Autocomplete({
+					"input": document.getElementById("search"),
+					"location": "北京市",
+					onSearchComplete: function(e) {
+					}
+				});
+				initSearch();
+				document.getElementById('search').onkeyup = function() {
+					search.search(this.value);
+				}
+			}
+			function resize() {
+				var win = document.getElementById("map");
+				win.style.width = window.innerWidth + "px";
+				win.style.height = window.innerHeight + "px";
+			}
+			function initSearch() {
+				search = new BMap.LocalSearch('北京', {
+					onSearchComplete: function() {
+					}
+				});
+			}
+			window.onload = initialize;
+			window.onresize = resize;
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="search" />
+		<div id="map"></div>
+	</body>
+
+</html>

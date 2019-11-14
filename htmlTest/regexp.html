@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>正则Test</title>
+</head>
+
+<body>
+</body>
+<script type="text/javascript">
+//正则 断言式
+
+var testStr = 'The RegExp strCode test strings';
+
+//正向前瞻
+function testRegExp01() {
+    var regexp = /(.*?)(?=i)/g;
+    var resultArray = regexp.exec(testStr);
+    var resultBoolen = regexp.test(testStr);
+
+    console.log(resultArray);
+    console.log(resultBoolen);
+}
+
+//负向前瞻
+function testRegExp02() {
+    var regexp = /(str)(?!ing)/g;
+    var resultArray = regexp.exec(testStr);
+    var resultBoolen = regexp.test(testStr);
+
+    console.log(resultArray);
+    console.log(resultBoolen);
+}
+
+//正向后瞻
+function testRegExp03() {
+    // js 不支持后瞻
+    // var regexp = /(?<=i)(.*?)/g;
+    var regexp = /^(The)(.*?)/g;
+    var resultArray = regexp.exec(testStr);
+    var resultBoolen = regexp.test(testStr);
+
+    console.log(resultArray);
+    console.log(resultBoolen);
+}
+
+//负向后瞻
+function testRegExp04() {
+    // js 不支持后瞻
+    // var regexp = /(?<!i)(.*?)/g;
+    var regexp = /(^[^i])(.*?)/g;
+    var resultArray = regexp.exec(testStr);
+    var resultBoolen = regexp.test(testStr);
+
+    console.log(resultArray);
+    console.log(resultBoolen);
+}
+
+//贪婪式
+function testRegExp05() {
+
+    var regexp = /s(.*?)(?=s)/g;
+    var resultArray = regexp.exec(testStr);
+    var resultBoolen = regexp.test(testStr);
+
+    console.log(resultArray);
+    console.log(resultBoolen);
+}
+
+function testRegExp06() {
+
+    var rxhtmlTag = /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([\w:]+)[^>]*)\/>/gi;
+
+    var value = "<div/>";
+    value = value.replace(rxhtmlTag, "<$1></$2>");
+
+    console.log(value);
+
+    var c = 'ergergegr';
+    c = c.replace(/(e)(r)/g, '<$1></$2>');
+
+    var reg = /(([\d]+)[a-z]*)/g;
+    '<124249njjs>'.replace(reg, '$1::$2');
+
+    //匹配替换从外层括号开始 断言不匹配
+}
+
+function testRegExp07() {
+    var reg = /^(?!\D+$)(?![^a-z]+$)(?![^A-Z]+$)[0-9a-zA-Z]{6,12}$/gi;
+
+    var text = '23mlsdf23A';
+
+    console.log('testRegExp07', reg.test(text));
+}
+
+testRegExp01();
+
+testRegExp02();
+
+testRegExp03();
+
+testRegExp04();
+
+testRegExp05();
+
+testRegExp06();
+
+testRegExp07()
+</script>
+
+</html>

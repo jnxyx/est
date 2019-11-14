@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>lable 语句</title>
+	</head>
+
+	<body>
+	</body>
+	<script type="text/javascript">
+		var numb = 0;
+		go: for (var i = 0; i < 10; i++) {
+			for (var j = 0; j < 10; j++) {
+				if (i == 5 && j == 5) {
+					break go;
+				}
+				numb++;
+			}
+		}
+		console.log('numb = ' + numb + '\ni = ' + i + '\nj = ' + j);
+		var numc = 0;
+		to: for (var i = 0; i < 10; i++) {
+			for (var j = 0; j < 10; j++) {
+				if (i == 5 && j == 5) {
+					continue to;
+				}
+				numc++;
+			}
+		}
+		console.log('numc = ' + numc + '\ni = ' + i + '\nj = ' + j);
+	</script>
+
+</html>

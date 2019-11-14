@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>图片裁剪</title>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+
+<body>
+    <script type="text/javascript" src="./jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./cropbox.js"></script>
+    <div class="container">
+        <div class="imageBox" style="background-image: url(&quot;http://demo.zhaotexiao.com/html5/201503/501/images/avatar.png&quot;); background-size: 573.48px 573.48px; background-position: -75px -84px; background-repeat: no-repeat;">
+            <div class="thumbBox"></div>
+            <div class="spinner" style="display: none;">Loading...</div>
+        </div>
+        <div class="action">
+            <input type="file" id="file" style="float:left; width: 250px">
+            <input type="button" id="btnCrop" value="Crop" style="float: right">
+            <input type="button" id="btnZoomIn" value="+" style="float: right">
+            <input type="button" id="btnZoomOut" value="-" style="float: right">
+        </div>
+        <div class="cropped"></div>
+    </div>
+    <script type="text/javascript">
+    $(window).load(function() {
+        var options = {
+            thumbBox: '.thumbBox',
+            spinner: '.spinner',
+            imgSrc: 'images/avatar.png'
+        }
+        var cropper = $('.imageBox').cropbox(options);
+        $('#file').on('change', function() {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                options.imgSrc = e.target.result;
+                cropper = $('.imageBox').cropbox(options);
+            }
+            reader.readAsDataURL(this.files[0]);
+            this.files = [];
+        })
+        $('#btnCrop').on('click', function() {
+            var img = cropper.getDataURL();
+            $('.cropped').append('<img src="' + img + '">');
+        })
+        $('#btnZoomIn').on('click', function() {
+            cropper.zoomIn();
+        })
+        $('#btnZoomOut').on('click', function() {
+            cropper.zoomOut();
+        })
+    });
+    </script>
+</body>
+
+</html>

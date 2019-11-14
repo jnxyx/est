@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jq_extend</title>
+		<script type="text/javascript" src="../js/lib/jquery-2.1.4.js" ></script>
+		<script type="text/javascript">
+			(function($){
+				$.extend({
+					xu:function(){
+						console.log('xu');
+					}
+				});
+				$.fn.extend({
+					xu:function(){
+						console.log('xu');
+					}
+				});
+				$.fn['yun']=function(){
+					console.log(this.html());
+				}
+			})(jQuery)
+			$(function(){
+				console.log($);
+				console.log($.fn);
+				$('#xu').yun();
+			})
+		</script>
+	</head>
+	<body>
+		<div id="xu">xuyunxiang</div>
+	</body>
+</html>

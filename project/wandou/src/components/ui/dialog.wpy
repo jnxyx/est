@@ -1,0 +1,138 @@
+<template>
+    <view class="ui-dialog {{ showClass }} {{ paddingNone ? '' : 'ui-padding' }}">
+        <slot name="content"></slot>
+    </view>
+    <Mask></Mask>
+</template>
+<script>
+    import wepy from 'wepy';
+
+    import Mask from '@/components/ui/mask';
+
+    export default class UiDialog extends wepy.component {
+
+        components = {
+            Mask
+        }
+
+        data = {
+            show: false,
+            showClass: 'hide'
+        }
+
+        props = {
+            paddingNone: {
+                type: Boolean,
+                default() {
+                    return false
+                }
+            }
+        }
+
+        watch = {
+            // 渐显/渐隐控制
+            ['show'](newVal, oldVal) {
+                if (newVal !== oldVal) {
+                    // 更新mask状态
+                    this.$invoke('Mask', newVal ? 'showOut' : 'hideIn');
+                    // 渐显/渐隐控制
+                    if (newVal) {
+                        this.showClass ='';
+                        setTimeout(() => {
+                            this.showClass ='trans-show';
+                            this.$apply();
+                        }, 0);
+                    }
+                    else {
+                        this.showClass ='';
+                        setTimeout(() => {
+                            this.showClass ='hide';
+                            this.$apply();
+                        }, 300);
+                    }
+                }
+            }
+        }
+
+        methods = {
+            showOut() {
+                this.show = true;
+            },
+            hideIn() {
+                this.show = false;
+            }
+        }
+    }
+</script>
+<style lang="less">
+    .ui-dialog {
+        position: fixed;
+        top: 45%;
+        left: 50%;
+        width: 600rpx;
+        box-sizing: border-box;
+        border-radius: 4rpx;
+        transform: translate(-50%, -50%);
+        z-index: 11;
+        transition: all .3s ease-in;
+        background-color: transparent;
+        opacity: 0;
+        &.ui-padding {
+            top: 50%;
+            background-color: #fff;
+            padding: 55rpx 60rpx;
+        }
+        // 渐显/渐隐控制
+        &.trans-show {
+            opacity: 1;
+        }
+        &.hide {
+            display: none;
+        }
+
+        .content-wrap {
+            .tit {
+                text-align: center;
+                font-size: 34rpx;
+                color: #222;
+            }
+            .con {
+                margin-top: 20rpx;
+                text-align: left;
+                font-size: 32rpx;
+                color: #394259;
+            }
+            .actions {
+                margin-top: 50rpx;
+                .btn {
+                    margin-top: 25rpx;
+                    width: 480rpx;
+                    height: 84rpx;
+                    border-radius: 84rpx;
+                    line-height: 84rpx;
+                    text-align: center;
+                    font-size: 36rpx;
+                    color: #fff;
+                    background-color: #397BE6;
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                    &:active {
+                        background-color: darken(#397BE6, 10%);
+                    }
+                    &.trans {
+                        color: #397BE6;
+                        border: 1rpx solid #397BE6;
+                        background-color: #fff;
+                        &:active {
+                            color: darken(#397BE6, 10%);
+                            border-color: darken(#397BE6, 10%);
+                            background-color: rgba(49, 122, 241, .03);
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+</style>

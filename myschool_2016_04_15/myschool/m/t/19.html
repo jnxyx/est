@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		function load() {
+			var array = [4, 2, 7, 8, 3, 1, 6, 9, 5, 0];
+			array.sort();
+			for (var i in array) {
+				var html = document.getElementById('p1').innerHTML;
+				document.getElementById('p1').innerHTML = html + i + ',';
+			}
+		}
+		window.onload = load;
+	</script>
+
+	<body>
+		<p id="p1"></p>
+		<p id="p2"></p>
+	</body>
+
+</html>

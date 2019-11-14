@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>code_runtime</title>
+	</head>
+	<style type="text/css">
+		p{
+			width: 100px;
+			height: 30px;
+			line-height: 30px;
+			margin: 10px;
+			display: block;
+			cursor: pointer;
+		}
+	</style>
+	<body>
+		<p id="timer"></p>
+		<p id="before"></p>
+		<p id="after"></p>
+		<p id="interver"></p>
+		<p id="ip"></p>
+	</body>
+	<script type="text/javascript">
+	    //var a=//; 
+		var before = document.getElementById('before');
+		var after = document.getElementById('after');
+		var timer = document.getElementById('timer');
+		var interval = document.getElementById('interver');
+		var ip = document.getElementById('ip');
+		var btime, atime;
+		btime = new Date().getTime();
+		before.innerHTML = btime;
+		for (var i = 0; i < 1000; i++) {
+			timer.innerHTML = i;
+		}
+		atime = new Date().getTime();
+		after.innerHTML = atime;
+
+		function inter() {
+			var itime = new Date().getTime();
+			interval.innerHTML = itime;
+			
+//			setInterval(i, 1000);
+			
+			function i(){
+				ip.innerHTML=itime;
+			}
+		}
+		setInterval(inter, 1);
+	</script>
+
+</html>

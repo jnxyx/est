@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<select>
+			<option>s1</option>
+			<option>s2</option>
+			<option>s3</option>
+			<option>s4</option>
+			<option>s5</option>
+		</select>
+		<script type="text/javascript">
+			window.onload = function bind() {
+				var optionsClick = document.getElementsByTagName("option");
+				var select = document.getElementsByTagName("select");
+				for (var i = 0; i < optionsClick.length; i++) {
+					optionsClick[i].addEventListener("click", done, false);
+				}
+				//				select[0].addEventListener("click", done, false);
+				selectclick();
+
+				function done() {
+					//					this.onclick = null;
+					console.log("请求发送，替换选项")
+					//					this.innerHTML = "<option>s1</option><option>s2</option><option>s3</option>";
+					this.innerHTML = "<option>s1</option><option>s2</option><option selected='selected'>s3</option><option>s4</option><option>s5</option><option>s6</option><option>s7</option>";
+					//					console.log(this.selectedIndex)
+					this.onchange = function() {
+						console.log("onchange-当前选择索引")
+						console.log(this.selectedIndex)
+						this.onclick = null;
+					}
+					this.onreset = function() {
+						console.log("onreset-当前选择索引")
+						console.log(this.selectedIndex)
+					}
+				}
+
+				function selectclick() {
+					//					console.log(select[0].onclick)
+					if (!select[0].onclick) {
+						select[0].onclick = done;
+					}
+				}
+
+				function removeclick() {
+					select[0].removeEventListener("click", done)
+				}
+				setInterval(selectclick, 100);
+			}
+		</script>
+	</body>
+
+</html>

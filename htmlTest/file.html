@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>file文件测试</title>
+</head>
+<style type="text/css">
+img {
+    width: 100px;
+    height: 100px;
+}
+</style>
+
+<body>
+    <input type="file" id='file' name="name" value='上传' />
+    <img id='img' src="">
+</body>
+<script type="text/javascript">
+var fileElement = document.getElementById('file')
+var imgElement = document.getElementById('img')
+var fileList
+var arrayBuffer
+window.onload = function() {
+    fileElement.onchange = function(e) {
+        fileList = Array.prototype.slice.call(fileElement.files)
+        fileList.forEach((file) => {
+            fileToBlob(file)
+        })
+    }
+}
+
+function fileToBlob(file) {
+    console.group('--file对象--')
+    console.log('--file--', file)
+    var slice = file.slice(0, file.size)
+    // var slice = file.slice(0, file.size / 2)
+    // var slice = file.slice(file.size / 2, file.size)
+    var reader = new FileReader()
+    console.log('reader', reader)
+    // readAsDataURL
+    // readAsText
+    reader.readAsArrayBuffer(slice)
+    reader.onload = function(e) {
+        console.log('--reader.e--', e)
+        console.log('--typeof reader.result--', typeof reader.result)
+        arrayBuffer = reader.result
+        console.log('--reader.result--', reader.result)
+        imgElement.src = reader.result
+    }
+
+    console.groupEnd()
+
+}
+</script>
+
+</html>
