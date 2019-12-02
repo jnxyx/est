@@ -15,10 +15,10 @@ postcss
 https://postcss.org/
 https://github.com/postcss/postcss
 
-autoprefixer（postcss插件）
+autoprefixer（postcss插件: css3添加兼容前缀）
 https://github.com/postcss/autoprefixer
 
-px2rem-postcss（postcss插件）
+px2rem-postcss（postcss插件：px转换rem）
 https://github.com/songsiqi/px2rem-postcss
 
 
@@ -53,8 +53,11 @@ typescript
 https://www.typescriptlang.org/
 https://github.com/Microsoft/TypeScript
 
+chalk (控制台打印)
+https://github.com/chalk/chalk
 
-// -------- webpack load --------
+
+// -------- webpack loader --------
 css-loader
 https://github.com/webpack-contrib/css-loader
 
@@ -87,3 +90,11 @@ https://github.com/TypeStrong/ts-loader
 
 html-loader
 https://github.com/webpack-contrib/html-loader
+
+
+// -------- webpack plugin --------
+uglifyjs-webpack-plugin
+https://github.com/webpack-contrib/uglifyjs-webpack-plugin
+
+copy-webpack-plugin
+https://github.com/webpack-contrib/copy-webpack-plugin
