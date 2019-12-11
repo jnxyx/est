@@ -1,0 +1,5 @@
+基于vue的设计模式
+1. 定义service层，对接api
+2. 定义page页面对象，对接页面操作
+3. 页面初始化page操作对象pageModel，页面操作对象基于pageModel进行交互。
+备注：结构分层，基于typescript设计实体模型层，数据抽象层
