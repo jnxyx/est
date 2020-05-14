@@ -34,6 +34,8 @@ https://github.com/sindresorhus/query-string
 object-assign
 https://github.com/sindresorhus/object-assign
 
+clipboard
+
 axios
 https://github.com/axios/axios
 
@@ -58,6 +60,8 @@ https://github.com/chalk/chalk
 
 
 // -------- webpack loader --------
+loader-utils
+
 css-loader
 https://github.com/webpack-contrib/css-loader
 

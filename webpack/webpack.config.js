@@ -22,7 +22,9 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
+        // 按后缀查找
         extensions: ['.js', '.vue', '.json'],
+        // 模块地址映射
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
             '@': resolve('src')
